@@ -111,7 +111,7 @@
 //       {/* Submit Button */}
 //       <button
 //         type="submit"
-//         className="w-full py-3 mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md 
+//         className="w-full py-3 mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md
 //                    transition-all transform hover:scale-105 active:scale-95"
 //       >
 //         🚀 Add Event
@@ -121,10 +121,6 @@
 // };
 
 // export default EventForm;
-
-
-
-
 
 import React, { useState } from "react";
 
@@ -141,12 +137,20 @@ const EventForm = ({ addEvent }) => {
     e.preventDefault();
 
     // Validation
+
+    const today = new Date().toISOString().split("T")[0];
+
     if (title.length < 3) {
       setError("Title must be at least 3 characters long.");
       return;
     }
     if (description.length < 10) {
       setError("Description must be at least 10 characters long.");
+      return;
+    }
+
+    if (date < today) {
+      setError("Please select a future date.");
       return;
     }
 
