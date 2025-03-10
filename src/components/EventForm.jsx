@@ -36,60 +36,85 @@ const EventForm = ({ addEvent }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded-lg p-6 w-full max-w-lg mx-auto mt-6"
+      className="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg mx-auto mt-6
+                 backdrop-blur-md bg-opacity-90 border border-gray-200"
     >
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Add a New Event</h2>
+      <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-6">
+        📅 Add a New Event
+      </h2>
 
       {error && (
-        <p className="text-red-500 bg-red-100 p-2 rounded mb-3">{error}</p>
+        <p className="text-red-600 bg-red-100 p-3 rounded-md text-center mb-4 shadow-sm">
+          {error}
+        </p>
       )}
 
-      <input
-        type="text"
-        placeholder="Event Title"
-        className="input input-bordered w-full mb-3"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
+      {/* Event Title */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Event Title"
+          className="input input-bordered w-full px-4 py-3 rounded-lg text-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition-all"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+      </div>
 
-      <input
-        type="date"
-        className="input input-bordered w-full mb-3"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        required
-      />
+      {/* Event Date */}
+      <div className="mb-4">
+        <input
+          type="date"
+          className="input input-bordered w-full px-4 py-3 rounded-lg text-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition-all"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+      </div>
 
-      <select
-        className="select select-bordered w-full mb-3"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
+      {/* Category Dropdown */}
+      <div className="mb-4">
+        <select
+          className="select select-bordered w-full rounded-lg text-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition-all cursor-pointer"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="religious">Religious</option>
+          <option value="social">Social</option>
+          <option value="charity">Charity</option>
+        </select>
+      </div>
+
+      {/* Location */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Location"
+          className="input input-bordered w-full px-4 py-3 rounded-lg text-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition-all"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          required
+        />
+      </div>
+
+      {/* Description */}
+      <div className="mb-4">
+        <textarea
+          placeholder="Description"
+          className="textarea textarea-bordered w-full px-4 py-3 rounded-lg text-lg shadow-sm focus:ring-2 focus:ring-blue-400 transition-all resize-none"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="w-full py-3 mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md 
+                   transition-all transform hover:scale-105 active:scale-95"
       >
-        <option value="religious">Religious</option>
-        <option value="social">Social</option>
-        <option value="charity">Charity</option>
-      </select>
-
-      <input
-        type="text"
-        placeholder="Location"
-        className="input input-bordered w-full mb-3"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        required
-      />
-
-      <textarea
-        placeholder="Description"
-        className="textarea textarea-bordered w-full mb-3"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-
-      <button type="submit" className="btn btn-primary w-full mt-3">
-        Add Event
+        🚀 Add Event
       </button>
     </form>
   );
