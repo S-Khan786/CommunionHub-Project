@@ -45,6 +45,18 @@ const Header = () => {
                 Events
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-blue-700 font-bold border-b-2 border-blue-700"
+                    : "text-black hover:text-purple-600 transition-colors duration-300"
+                }
+              >
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

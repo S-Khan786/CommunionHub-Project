@@ -85,8 +85,15 @@ const Home = () => {
           events effortlessly.
         </p>
         <Link to="/events">
-          <button className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-lg font-medium shadow-md transition-all">
+          <button className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-lg font-medium shadow-md transition-all shadow-md 
+                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer">
             Explore Events
+          </button>
+        </Link>
+        <Link to="/abouts">
+          <button className="ml-5 mt-6 px-6 py-3 text-purple-700 rounded-lg text-lg font-medium shadow-md transition-all border-1 border-purple-600 shadow-md 
+                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer">
+            Learn More
           </button>
         </Link>
       </div>
