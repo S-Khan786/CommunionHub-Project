@@ -1,27 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Home = () => {
-//   return (
-//     <div className="min-h-screen bg-gradient-to-r from-blue-200 to-purple-300 flex flex-col items-center justify-center px-6 py-12 text-center">
-//       <h1 className="text-6xl font-extrabold text-gray-900 leading-tight drop-shadow-lg">
-//         Connecting People Across <span className="text-purple-600">Faiths</span> & <span className="text-blue-600">Interests</span>
-//       </h1>
-//       <p className="text-lg text-gray-700 mt-4 max-w-2xl">
-//         Join our community to discover and share events that bring people together.
-//       </p>
-//       <Link to="/events">
-//         <button className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-lg font-medium shadow-md transition-all">
-//           Explore Events
-//         </button>
-//       </Link>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { easeInOut, motion } from "framer-motion";
@@ -85,14 +61,18 @@ const Home = () => {
           events effortlessly.
         </p>
         <Link to="/events">
-          <button className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-lg font-medium shadow-md transition-all shadow-md 
-                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer">
+          <button
+            className="mt-6 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-lg font-medium shadow-md transition-all shadow-md 
+                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+          >
             Explore Events
           </button>
         </Link>
         <Link to="/about">
-          <button className="ml-5 mt-6 px-6 py-3 text-purple-700 rounded-lg text-lg font-medium shadow-md transition-all border-1 border-purple-600 shadow-md 
-                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer">
+          <button
+            className="ml-5 mt-6 px-6 py-3 text-purple-700 rounded-lg text-lg font-medium shadow-md transition-all border-1 border-purple-600 shadow-md 
+                           transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+          >
             Learn More
           </button>
         </Link>
@@ -102,4 +82,3 @@ const Home = () => {
 };
 
 export default Home;
-
